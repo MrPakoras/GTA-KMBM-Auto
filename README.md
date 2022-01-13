@@ -1,5 +1,7 @@
 # GTA-KMBM-Auto
 GTA KiddionsMod Bunker Mission Automater
+> Inspired by: https://www.unknowncheats.me/forum/grand-theft-auto-v/329379-automating-kiddions-modest-menu-minimum-job-payout-blow-ii.html
+
 
 # Setup:
 
