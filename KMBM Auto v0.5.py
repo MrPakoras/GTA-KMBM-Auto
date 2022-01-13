@@ -123,7 +123,7 @@ def main():
 	n += 1 # loops
 
 	## Log file
-	with open('../log.txt','a+') as file:
+	with open('log.txt','a+') as file:
 		total = time.time()-start
 		dt = time.strftime('%d/%m/%y %I:%M:%S%p')
 		print(f'>> {dt} - Sequence took {total} seconds.')
