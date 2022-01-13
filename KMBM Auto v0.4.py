@@ -91,7 +91,7 @@ def main():
 	pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # Click Confirm button
 	pync()
 
-	time.sleep(5)
+	time.sleep(8)
 
 	## Navigate to Bunker Settings in mod menu
 	kbp(back_key,2)
@@ -131,7 +131,7 @@ def main():
 	kbp(up_key,5) # Return to top
 
 
-	time.sleep(5)
+	time.sleep(8)
 
 	n += 1 # loops
 	
