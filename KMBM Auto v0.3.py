@@ -42,9 +42,12 @@ def main():
 	time.sleep(2)
 	# Enter Bunker
 	# Start in Teleport section of mod menu
-	kbp(down_key, 5)
-	kbp(enter_key) # Custom locations
 
+	## TP to laptop
+	kbp(down_key, 5)
+	kbp(enter_key,1) # Custom locations
+
+	## Use laptop
 	for loop in range(1): # Change this to whichever location your bunker laptop is
 		kbp(down_key,1)
 
@@ -57,9 +60,13 @@ def main():
 
 	time.sleep(1)
 
+	## Selling stock
 	pdi.moveTo(res[0]//2, round(res[1]*0.6)) # Click Enter laptop button
 	time.sleep(1)
 	# pdi mouse clicks werent working in game so had to use pynput
+	pync()
+
+	pdi.moveTo(round(res[0]*1/5),round(res[1]*4/7)) # Click Sell Stock button
 	pync()
 
 	pdi.moveTo(round(res[0]*2/5),round(res[1]*5/7)) # Click Sell to LS button
@@ -68,13 +75,36 @@ def main():
 	pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # Click Confirm button
 	pync()
 
-	# Navigate to Bunker Settings in mod menu
-	pdi(back_key,2)
-	pdi(down_key,3)
-	pdi(enter_key,2)
-	pdi(down_key,1)
+	time.sleep(5)
+
+	## Navigate to Bunker Settings in mod menu
+	kbp(back_key,2)
+	kbp(down_key,3)
+	kbp(enter_key,2)
+	kbp(down_key,1)
+
+	## Increase payout to 2 mill
+	for loop in range(200):
+		pdi.keyDown(right_key)
+	pdi.keyUp(right_key)
+
+	kbp(enter_key,1)
+
+	## Re-enter bunker
+	for loop in range(30):
+		pdi.keyDown('s')
+	pdi.keyUp('s')
+
+	## Restock supplies
+	kbp(down_key,1)
+	kbp(enter_key,1)
+
+	## Navigate back to Teleport section
+	kbp(back_key,2)
+	kbp(up_key,3)
+	kbp(enter_key,1)
 
 	
 
-
-main()
+while True:
+	main()

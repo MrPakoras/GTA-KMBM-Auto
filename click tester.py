@@ -43,6 +43,13 @@ time.sleep(2)
 
 # pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # confirm
 
-pdi.keyDown('a')
-time.sleep(2)
-pdi.keyUp('a')
+# pdi.keyDown('a')
+# time.sleep(2)
+# pdi.keyUp('a')
+
+# for loop in range(20):
+# 	pdi.keyDown('a')
+
+for loop in range(30):
+	pdi.keyDown('s')
+pdi.keyUp('s')
