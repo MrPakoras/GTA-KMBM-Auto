@@ -41,7 +41,7 @@ def pync(): # pynput click
 
 
 # Prog
-n = 0
+n = 18 # set to 18 so it buys stock on 3rd loop
 
 def main():
 	time.sleep(2)

@@ -1,4 +1,4 @@
-import pyautogui, time, ctypes, math, pywinauto, mouse
+import pyautogui, time, ctypes, math, pywinauto, mouse, time
 import pydirectinput as pdi
 from pynput.mouse import Button, Controller
 
@@ -65,16 +65,30 @@ pyn_mouse = Controller()
 # 	pdi.keyDown('s')
 # pdi.keyUp('s')
 
-def pync(): # pynput click
-	pyn_mouse.press(Button.left)
-	time.sleep(0.1)
-	pyn_mouse.release(Button.left)
-	time.sleep(0.5)
+# def pync(): # pynput click
+# 	pyn_mouse.press(Button.left)
+# 	time.sleep(0.1)
+# 	pyn_mouse.release(Button.left)
+# 	time.sleep(0.5)
 
 
-pdi.moveTo(round(res[0]*1/5),round(res[1]*0.45)) # resupply button
-pync()
-pdi.moveTo(round(res[0]*2/5),round(res[1]*5/7)) # Click steal button
-pync()
-pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # Click Confirm button
-pync()
+# pdi.moveTo(round(res[0]*1/5),round(res[1]*0.45)) # resupply button
+# pync()
+# pdi.moveTo(round(res[0]*2/5),round(res[1]*5/7)) # Click steal button
+# pync()
+# pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # Click Confirm button
+# pync()
+
+
+with open('../log.txt','a+') as file:
+	print('starting...')
+	start = time.time()
+	# time.sleep(10)
+	total = time.time()-start
+	dt = time.strftime('%d/%m/%y %I:%M:%S%p')
+	print(f'>> {dt} - Sequence took {total} seconds.')
+
+	file.seek(0)
+	file.write(f'>> {dt} - Sequence took {total} seconds.\n')
+	file.close()
+	
