@@ -7,7 +7,7 @@ GTA KiddionsMod Bunker Mission Automater
 
 * Add a custom location of your bunker laptop _(make sure youre in a position where the popup for sitting in the seat will show up)_
 * Add a custom location of your Bunker trigger point _(I did this by running into the trigger and spamming 'add location')_
-* Sell Bunker Stock manually once or twice (the mod menu does this annoying thing where on the first sell, the delivery price increases at a higher rate than usual, so it breaks the timings)
+* Sell Bunker Stock manually once or twice _(the mod menu does this annoying thing where on the first sell, the delivery price increases at a higher rate than usual, so it breaks the timings)_
 
 _**IMPORTANT: THE CUSTOM LOCATIONS MUST BE IN THE ORDER THEY ARE LISTED** (You can edit the teleports.json file in the mod menu directory to change the order of custom locations)_
 
