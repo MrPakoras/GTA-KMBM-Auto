@@ -33,13 +33,14 @@ def pync(): # pynput click
 	pyn_mouse.press(Button.left)
 	time.sleep(0.1)
 	pyn_mouse.release(Button.left)
-	time.sleep(2)
+	time.sleep(0.5)
 
 
 # Prog
 
 def main():
 	time.sleep(2)
+	# pdi.moveTo(res[0]//2, res[1]//2) # centre mouse
 	# Enter Bunker
 	# Start in Teleport section of mod menu
 
@@ -48,14 +49,12 @@ def main():
 	kbp(enter_key,1) # Custom locations
 
 	## Use laptop
-	for loop in range(1): # Change this to whichever location your bunker laptop is
-		kbp(down_key,1)
-
+	kbp(down_key,1) # Change n to whichever location your bunker laptop is
 	kbp(enter_key,1) # TP to laptop
 	time.sleep(0.5)
 
 	kbp('t',1) # Sit on chair
-	time.sleep(5)
+	time.sleep(8)
 	kbp('enter',1) # Press Enter to open laptop
 
 	time.sleep(1)
@@ -91,9 +90,11 @@ def main():
 	kbp(enter_key,1)
 
 	## Re-enter bunker
-	for loop in range(30):
+	for loop in range(20):
 		pdi.keyDown('s')
+		kbp('d',1)
 	pdi.keyUp('s')
+
 
 	## Restock supplies
 	kbp(down_key,1)
@@ -103,7 +104,7 @@ def main():
 	kbp(back_key,2)
 	kbp(up_key,3)
 	kbp(enter_key,1)
-
+	time.sleep(5)
 	
 
 while True:

@@ -4,7 +4,7 @@ from pynput.mouse import Button, Controller
 
 user32 = ctypes.windll.user32
 res = user32.GetSystemMetrics(0),user32.GetSystemMetrics(1) # screen resolution
-
+print(res)
 
 time.sleep(2)
 
@@ -50,6 +50,14 @@ time.sleep(2)
 # for loop in range(20):
 # 	pdi.keyDown('a')
 
-for loop in range(30):
-	pdi.keyDown('s')
-pdi.keyUp('s')
+# for loop in range(30):
+# 	pdi.keyDown('s')
+# pdi.keyUp('s')
+mx,my = round(res[0]*0.5),round(res[1]*0.1)
+print(mx,my)
+
+pdi.moveTo(mx,my) 
+
+# for loop in range(30):
+# 	pdi.keyDown('s')
+# pdi.keyUp('s')
