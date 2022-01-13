@@ -13,5 +13,5 @@ _**IMPORTANT: THE CUSTOM LOCATIONS MUST BE IN THE ORDER THEY ARE LISTED** (You c
 
 * Enter your Bunker _(stay where you are)_
 * Open the mod menu and navigate to the Teleport section (leave the 1st option highlighted)
-* Run the script and tab into the game
+* Run the "KMBM Auto v0.4.py" and tab into the game
 * Enjoy stonks :)
