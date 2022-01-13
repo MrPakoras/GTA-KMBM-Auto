@@ -37,6 +37,7 @@ def pync(): # pynput click
 
 
 # Prog
+n = 0
 
 def main():
 	time.sleep(2)
@@ -54,10 +55,22 @@ def main():
 	time.sleep(0.5)
 
 	kbp('t',1) # Sit on chair
-	time.sleep(8)
+	time.sleep(7)
 	kbp('enter',1) # Press Enter to open laptop
 
 	time.sleep(1)
+
+	## Resupply
+	global n
+	if n == 20:
+		pdi.moveTo(round(res[0]*1/5),round(res[1]*0.45)) # resupply button
+		pync()
+		pdi.moveTo(round(res[0]*2/5),round(res[1]*5/7)) # Click steal button
+		pync()
+		pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # Click Confirm button
+		pync()
+		time.sleep(10)
+		n = 0
 
 	## Selling stock
 	pdi.moveTo(res[0]//2, round(res[1]*0.6)) # Click Enter laptop button
@@ -89,11 +102,11 @@ def main():
 
 	kbp(enter_key,1)
 
-	## Re-enter bunker
-	for loop in range(20):
-		pdi.keyDown('s')
-		kbp('d',1)
-	pdi.keyUp('s')
+	# ## Re-enter bunker
+	# for loop in range(20):
+	# 	pdi.keyDown('s')
+	# 	kbp('d',1)
+	# pdi.keyUp('s')
 
 
 	## Restock supplies
@@ -104,7 +117,19 @@ def main():
 	kbp(back_key,2)
 	kbp(up_key,3)
 	kbp(enter_key,1)
+
+	## TP to Bunker
+	kbp(down_key, 5)
+	kbp(enter_key,1)
+	kbp(down_key, 2)
+	kbp(enter_key,1) # Custom location bunker
+	kbp(back_key,1)
+	kbp(up_key,5) # Return to top
+
+
 	time.sleep(5)
+
+	n += 1 # loops
 	
 
 while True:

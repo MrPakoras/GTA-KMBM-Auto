@@ -7,6 +7,7 @@ res = user32.GetSystemMetrics(0),user32.GetSystemMetrics(1) # screen resolution
 print(res)
 
 time.sleep(2)
+pyn_mouse = Controller()
 
 # print('pdi')
 # pdi.click()
@@ -39,6 +40,8 @@ time.sleep(2)
 
 # pdi.moveTo(round(res[0]*1/5),round(res[1]*4/7)) # sell stock button
 
+# pdi.moveTo(round(res[0]*1/5),round(res[1]*0.45)) # resupply button
+
 # pdi.moveTo(round(res[0]*2/5),round(res[1]*5/7)) # sell to LS
 
 # pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # confirm
@@ -53,11 +56,25 @@ time.sleep(2)
 # for loop in range(30):
 # 	pdi.keyDown('s')
 # pdi.keyUp('s')
-mx,my = round(res[0]*0.5),round(res[1]*0.1)
-print(mx,my)
+# mx,my = round(res[0]*0.5),round(res[1]*0.1)
+# print(mx,my)
 
-pdi.moveTo(mx,my) 
+# pdi.moveTo(mx,my) 
 
 # for loop in range(30):
 # 	pdi.keyDown('s')
 # pdi.keyUp('s')
+
+def pync(): # pynput click
+	pyn_mouse.press(Button.left)
+	time.sleep(0.1)
+	pyn_mouse.release(Button.left)
+	time.sleep(0.5)
+
+
+pdi.moveTo(round(res[0]*1/5),round(res[1]*0.45)) # resupply button
+pync()
+pdi.moveTo(round(res[0]*2/5),round(res[1]*5/7)) # Click steal button
+pync()
+pdi.moveTo(round(res[0]*0.55),round(res[1]*4/7)) # Click Confirm button
+pync()
