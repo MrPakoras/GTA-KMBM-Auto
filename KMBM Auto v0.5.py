@@ -101,6 +101,7 @@ def main():
 	kbp(enter_key,1)
 
 	## Restock supplies
+	# time.sleep(1)
 	kbp(down_key,1)
 	kbp(enter_key,1)
 
